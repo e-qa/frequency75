@@ -1,98 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="lib/tone.js"></script>
-    <script src="index.js" defer></script>
+    <title>Vite App</title>
   </head>
-  <style>
-    table {
-      max-width: 100px;
-      min-width: 50px;
-      height: 10px;
-    }
-    td {
-      border: 1px solid black;
-    }
-    main {
-      display: flex;
-      gap: 5px;
-    }
-    .title {
-      border: none;
-    }
-    div {
-      border: 1px solid black;
-      width: 50px;
-      text-align: center;
-      height: 30px;
-
-      cursor: pointer;
-    }
-  </style>
   <body>
-    <h1>Frequency75</h1>
-    <h2>TEST</h2>
-
-    <label for="synthtype">Synth Type</label>
-    <select name="synthtype" id="synthtype">
-      <option value="Synth">Synth</option>
-      <option value="AMSynth">AMSynth</option>
-      <option value="FMSynth">FMSynth</option>
-    </select>
-    <br /><br />
-
-    <label for="osctype">Osc Type</label>
-    <select name="osctype" id="osctype">
-      <option value="triangle">triangle</option>
-      <option value="sawtooth">sawtooth</option>
-      <option value="sine">sine</option>
-      <option value="square">square</option>
-    </select>
-    <br />
-    <br />
-    <button id="play">Play</button>
-    <main class="main">
-      <div class="title">Synth</div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
-      <div>7</div>
-      <div>8</div>
-      <div>9</div>
-      <div>10</div>
-      <div>11</div>
-      <div>12</div>
-      <div>13</div>
-      <div>14</div>
-      <div>15</div>
-      <div>16</div>
-    </main>
-
-    <table style="width: 100%">
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-      </tr>
-    </table>
+    <div id="app"></div>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
-<!--  TODO Table datanin <td/> nin width duzelt. -->
