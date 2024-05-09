@@ -1,19 +1,19 @@
-import * as Tone from "tone";
-import "./main.css";
+import * as Tone from 'tone';
+import './main.css';
 
-const input = document.getElementById("file");
+const input = document.getElementById('file');
 
 class BeatPattern {
   constructor() {
     this.lineCount = 1;
   }
   createLine(bgClass) {
-    const div = document.createElement("div");
+    const div = document.createElement('div');
     div.className = `${bgClass}`;
     div.innerText = this.lineCount;
-    div.setAttribute("data-id", this.lineCount);
-    div.addEventListener("click", () => {
-      const dataId = div.getAttribute("data-id");
+    div.setAttribute('data-id', this.lineCount);
+    div.addEventListener('click', () => {
+      const dataId = div.getAttribute('data-id');
       soundSampler.playSample(dataId);
     });
 
@@ -34,7 +34,7 @@ class SoundSampler {
       id: this.static,
       sampler: new Tone.Sampler({
         urls: {
-          ["C2"]: url,
+          ['C2']: url,
         },
       }).toDestination(),
     });
@@ -48,9 +48,9 @@ class SoundSampler {
       console.log(s.id === dataID);
 
       if (s.id == dataID) {
-        console.log("first");
+        console.log('first');
 
-        s.sampler.triggerAttack("C2");
+        s.sampler.triggerAttack('C2');
       }
     });
   }
@@ -59,20 +59,20 @@ class SoundSampler {
 const beatPattern = new BeatPattern();
 const soundSampler = new SoundSampler();
 
-const createPattern = document.getElementById("create-pattern");
+const createPattern = document.getElementById('create-pattern');
 
-createPattern.addEventListener("click", () => {
-  beatPattern.createLine("w-20 m-2 bg-green-600 play");
+createPattern.addEventListener('click', () => {
+  beatPattern.createLine('w-20 m-2 bg-green-600 play');
   soundSampler.getID(beatPattern.lineCount);
 });
 
-input.addEventListener("change", function () {
+input.addEventListener('change', function () {
   let file = input.files[0];
   let wavBlobURL = URL.createObjectURL(file);
   soundSampler.newSample(wavBlobURL);
 });
 
-const play = document.getElementById("play");
-play.addEventListener("click", () => {
+const play = document.getElementById('play');
+play.addEventListener('click', (e) => {
   soundSampler.playSample();
 });
