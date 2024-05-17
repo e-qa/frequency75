@@ -43,13 +43,9 @@ class SoundSampler {
   getID(id) {
     this.id = id;
   }
-  async playSample(dataID) {
+  playSample(dataID) {
     this.samples.map((s) => {
-      console.log(s.id === dataID);
-
       if (s.id == dataID) {
-        console.log('first');
-
         s.sampler.triggerAttack('C2');
       }
     });
@@ -58,7 +54,6 @@ class SoundSampler {
 
 const beatPattern = new BeatPattern();
 const soundSampler = new SoundSampler();
-
 const createPattern = document.getElementById('create-pattern');
 
 createPattern.addEventListener('click', () => {
