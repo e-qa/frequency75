@@ -1,12 +1,14 @@
 class CreatePattern {
   #patternLength = 16;
-  element;
+  #element;
   constructor(patternName) {
     this.patternName = patternName;
-    this.element = this.newPattern();
+    this.#element = this.#newPattern();
   }
-
-  createCheckbox(index, color) {
+  get element() {
+    return this.#element;
+  }
+  #createCheckbox(index, color) {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     let colorVar = {
@@ -30,18 +32,19 @@ class CreatePattern {
     return checkbox;
   }
 
-  newPattern() {
-    const colors = ['bg-fuchsia-600', 'bg-purple-600', 'bg-sky-600', 'bg-emerald-600', 'bg-amber-600', 'bg-red-600', 'bg-green-600'];
-    let color = colors[Math.floor(Math.random() * colors.length)];
-
+  #newPattern() {
+    const color = this.#getRandomColor();
     const div = document.createElement('div');
     div.classList.add('flex');
     for (let index = 0; index <= this.#patternLength; index++) {
-      const checkbox = this.createCheckbox(index, color);
+      const checkbox = this.#createCheckbox(index, color);
       div.appendChild(checkbox);
     }
-
     return div;
+  }
+  #getRandomColor() {
+    const colors = ['bg-fuchsia-600', 'bg-purple-600', 'bg-sky-600', 'bg-emerald-600', 'bg-amber-600', 'bg-red-600', 'bg-green-600'];
+    return colors[Math.floor(Math.random() * colors.length)];
   }
 }
 
