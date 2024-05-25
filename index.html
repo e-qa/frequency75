@@ -13,72 +13,16 @@
     />
     <title>Frequency75</title>
   </head>
-  <body class="font-redditsans bg-bg-primary">
-    <main class="mt-10">
-      <div class="flex">
-        <input type="text" class="bg-red-900 border-b-2 border-red-700 w-20" value="kick" disabled />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-      </div>
-      <div class="flex">
-        <input type="text" class="bg-red-900 w-20 border-b-2 border-red-700" value="snare" disabled />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-      </div>
-      <div class="flex">
-        <input type="text" class="bg-red-900 w-20 border-b-2 border-red-700" value="clap" disabled />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-        <input type="checkbox" />
-      </div>
-    </main>
-    <footer class="absolute bottom-0">
-      <button>
-        <img src="/src/icons/plus.svg" class="w-12 bg-current text-white" alt="add line" />
+  <body class="bg-bg-primary flex flex-col h-screen justify-between">
+    <!-- <div class="modal w-40 h-40 border border-red-700"></div> -->
+    <main class="mt-10 mb-auto" id="patternContainer"></main>
+
+    <footer class="h-10 mt-1 sticky bottom-0 bg-red-700">
+      <button id="add" title="add pattern" aria-label="Add new pattern">
+        <img src="/src/icons/plus.svg" class="w-10 text-white" alt="plus icon" />
       </button>
-      button
     </footer>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
