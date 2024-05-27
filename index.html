@@ -14,7 +14,18 @@
     <title>Frequency75</title>
   </head>
   <body class="bg-bg-primary text-white flex flex-col h-screen justify-between">
-    <!-- <div class="modal w-40 h-40 border border-red-700"></div> -->
+    <div class="modal hidden w-56 h-56 bottom-[41px] left-1 absolute border bg-red-900 border-red-700">
+      <div>
+        <label for="add_sample" class="flex text-xl shadow-gray-50 items-center justify-between w-full border cursor-pointer">
+          <img src="./src/icons/upload.svg" alt="upload" class="w-12" />
+          add sample
+          <input type="file" id="add_sample" hidden />
+        </label>
+      </div>
+      <div>
+        <button class="border w-full p-3 text-xl">add sytnh</button>
+      </div>
+    </div>
     <main class="mt-10 mb-auto" id="patternContainer"></main>
     <footer class="h-10 mt-1 sticky bottom-0 bg-red-700">
       <button id="add" title="add pattern" aria-label="Add new pattern">

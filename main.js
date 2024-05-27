@@ -2,14 +2,17 @@ import * as Tone from 'tone';
 import './main.css';
 import CreatePattern from './src/js/createPattern';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const addPatternBtn = document.getElementById('add');
-  const patternContainer = document.getElementById('patternContainer');
+const modal = document.querySelector('.modal');
 
-  addPatternBtn.addEventListener('click', () => {
-    const newPattern = new CreatePattern('kick');
-    patternContainer.appendChild(newPattern.element);
-  });
+// document.addEventListener('DOMContentLoaded', () => {});
+
+const addPatternBtn = document.getElementById('add');
+const patternContainer = document.getElementById('patternContainer');
+
+addPatternBtn.addEventListener('click', () => {
+  modal.classList.toggle('hidden');
+  // const newPattern = new CreatePattern('Chart Closed Hat 03');
+  // patternContainer.appendChild(newPattern.element);
 });
 
 // const input = document.getElementById('file');
