@@ -1,13 +1,20 @@
 class CreatePattern {
+  static currentId = 0;
   #patternLength = 16;
   #element;
+  #checkboxContainer = [];
   constructor(patternName) {
     this.patternName = patternName;
+    this.id = CreatePattern.currentId++;
     this.#element = this.#newPattern();
   }
   get element() {
     return this.#element;
   }
+  get checkboxContainer() {
+    return this.#checkboxContainer;
+  }
+
   #createCheckbox(index, color) {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
@@ -28,7 +35,7 @@ class CreatePattern {
       checkbox.value = this.patternName;
       checkbox.disabled = true;
     }
-
+    this.#checkboxContainer.push(checkbox);
     return checkbox;
   }
 
