@@ -11,7 +11,7 @@ const allAudio = [];
 let allPattern = {
   patterns: [],
 };
-
+let isplay = false;
 addPatternBtn.addEventListener('click', () => {
   modal.classList.toggle('hidden');
 });
@@ -20,7 +20,15 @@ input.addEventListener('change', () => {
   addAudioPattern(input.files[0]);
 });
 
-playPauseBtn.addEventListener('click', startStop);
+playPauseBtn.addEventListener('click', () => {
+  if (allAudio.length === 0 || allPattern.length === 0) return alert('you must add audio or synth to play');
+  if (isplay) {
+    Tone.Transport.stop();
+  } else {
+    startStop();
+  }
+  isplay = !isplay;
+});
 
 function addAudioPattern(audioFile) {
   const file = audioFile;
