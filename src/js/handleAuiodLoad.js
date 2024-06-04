@@ -1,5 +1,7 @@
 import * as Tone from 'tone';
 import UserAudioPattern from './UserAudioPattern';
+import checkAudioDataLength from '../utils/checkAudioDataLength';
+import { check } from './keyboardHandler';
 
 const modal = document.querySelector('.modal');
 const addPatternBtn = document.getElementById('add');
@@ -7,11 +9,18 @@ const patternContainer = document.getElementById('patternContainer');
 const input = document.getElementById('add_sample');
 const playPauseBtn = document.getElementById('play_pause');
 
-const allAudio = [];
-let allPattern = {
+document.addEventListener('keypress', (e) => check(e));
+
+export const allAudio = [];
+
+export let allPattern = {
   patterns: [],
 };
-let isplay = false;
+let isPlay = false;
+export function changeIsPlay(newIsPlay) {
+  isPlay = newIsPlay;
+}
+
 addPatternBtn.addEventListener('click', () => {
   modal.classList.toggle('hidden');
 });
@@ -21,13 +30,17 @@ input.addEventListener('change', () => {
 });
 
 playPauseBtn.addEventListener('click', () => {
-  if (allAudio.length === 0 || allPattern.length === 0) return alert('you must add audio or synth to play');
-  if (isplay) {
+  if (checkAudioDataLength()) {
+    return alert('you must add audio or synth to play');
+  }
+
+  if (isPlay) {
+    Tone.Transport.cancel();
     Tone.Transport.stop();
   } else {
     startStop();
   }
-  isplay = !isplay;
+  isPlay = !isPlay;
 });
 
 function addAudioPattern(audioFile) {
@@ -44,8 +57,9 @@ function addAudioPattern(audioFile) {
   modal.classList.add('hidden');
 }
 
-function startStop() {
+export function startStop() {
   triggerAudioSequence(16);
+  Tone.start();
   Tone.Transport.start();
 }
 
@@ -68,4 +82,5 @@ function triggerAudioSequence(patternlength) {
 function handleAuiodLoad(file) {
   addAudioPattern(file);
 }
+
 export default handleAuiodLoad;

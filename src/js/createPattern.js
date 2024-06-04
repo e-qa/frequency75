@@ -31,7 +31,7 @@ class CreatePattern {
 
     if (index === 0) {
       checkbox.type = 'text';
-      checkbox.classList.add(`${color}`, 'border-b-2', 'border-red-700', 'w-44', 'checked:bg-blue-800');
+      checkbox.classList.add(`${color}`, 'border-b-2', 'w-44', 'checked:bg-blue-800');
       checkbox.value = this.patternName;
       checkbox.disabled = true;
     }
