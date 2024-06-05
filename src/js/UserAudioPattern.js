@@ -1,7 +1,7 @@
 import * as Tone from 'tone';
-import CreatePattern from './CreatePattern';
+import Pattern from './CreatePattern';
 
-class UserAudioPattern extends CreatePattern {
+class UserAudioPattern extends Pattern {
   audioArr = [];
   constructor(patternName, audioFileUrl) {
     super(patternName);

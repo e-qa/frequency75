@@ -1,7 +1,7 @@
 import * as Tone from 'tone';
 import UserAudioPattern from './UserAudioPattern';
 import checkAudioDataLength from '../utils/checkAudioDataLength';
-import { check } from './keyboardHandler';
+import { spacebarPlayPauseHandler } from './keyboardHandler';
 
 const modal = document.querySelector('.modal');
 const addPatternBtn = document.getElementById('add');
@@ -9,7 +9,7 @@ const patternContainer = document.getElementById('patternContainer');
 const input = document.getElementById('add_sample');
 const playPauseBtn = document.getElementById('play_pause');
 
-document.addEventListener('keypress', (e) => check(e));
+document.addEventListener('keypress', (e) => spacebarPlayPauseHandler(e));
 
 export const allAudio = [];
 

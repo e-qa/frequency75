@@ -1,11 +1,11 @@
-class CreatePattern {
+class Pattern {
   static currentId = 0;
   #patternLength = 16;
   #element;
   #checkboxContainer = [];
   constructor(patternName) {
     this.patternName = patternName;
-    this.id = CreatePattern.currentId++;
+    this.id = Pattern.currentId++;
     this.#element = this.#newPattern();
   }
   get element() {
@@ -55,4 +55,4 @@ class CreatePattern {
   }
 }
 
-export default CreatePattern;
+export default Pattern;

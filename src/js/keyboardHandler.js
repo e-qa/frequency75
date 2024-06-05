@@ -3,7 +3,7 @@ import checkAudioDataLength from '../utils/checkAudioDataLength';
 import { changeIsPlay, startStop } from './handleAuiodLoad';
 
 let isPlay = false;
-export function check(e) {
+export function spacebarPlayPauseHandler(e) {
   if (e.code === 'Space') {
     if (checkAudioDataLength()) {
       return alert('you must add audio or synth to play');
