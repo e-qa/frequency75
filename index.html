@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -23,10 +24,11 @@
         </label>
       </div>
       <div>
-        <button class="border w-full p-3 text-xl">add sytnh</button>
+        <button id="add_synth" class="border w-full p-3 text-xl">add sytnh</button>
       </div>
     </div>
-    <main class="mt-10 mb-auto" id="patternContainer"></main>
+    <div class="mt-10 mb-auto" id="patternContainer"></div>
+    <div class="mt-10 mb-auto" id="sytnhPattern"></div>
     <footer class="h-12 mt-1 sticky bottom-0 bg-red-700 flex items-center">
       <div class="ml-3 flex items-center gap-5">
         <button id="add" title="add pattern" aria-label="Add new pattern">

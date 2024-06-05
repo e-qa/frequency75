@@ -1,5 +1,5 @@
 import * as Tone from 'tone';
-import Pattern from './Pattern';
+import Pattern from './AudioPattern';
 
 class UserAudioPattern extends Pattern {
   audioArr = [];

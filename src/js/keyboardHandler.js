@@ -1,6 +1,6 @@
 import * as Tone from 'tone';
 import checkAudioDataLength from '../utils/checkAudioDataLength';
-import { changeIsPlay, startStop } from './handleAuiodLoad';
+import { changeIsPlay, startStop } from './AudioPattern/handleAuiodLoad';
 
 let isPlay = false;
 export function spacebarPlayPauseHandler(e) {

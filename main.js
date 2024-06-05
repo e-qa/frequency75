@@ -5,4 +5,5 @@
 // \_/   \_/\_\\____\\____\\____/\____\\_/  \|\____//_/      \_/\____/
 
 import './main.css';
-import handleAuiodLoad from './src/js/handleAuiodLoad';
+import handleAuiodLoad from './src/js/AudioPattern/handleAuiodLoad';
+import handleSynth from './src/js/SynthPattern/handleSynth';

@@ -1,7 +1,7 @@
 import * as Tone from 'tone';
 import UserAudioPattern from './UserAudioPattern';
-import checkAudioDataLength from '../utils/checkAudioDataLength';
-import { spacebarPlayPauseHandler } from './keyboardHandler';
+import checkAudioDataLength from '../../utils/checkAudioDataLength';
+import { spacebarPlayPauseHandler } from '../keyboardHandler.js';
 
 const modal = document.querySelector('.modal');
 const addPatternBtn = document.getElementById('add');
