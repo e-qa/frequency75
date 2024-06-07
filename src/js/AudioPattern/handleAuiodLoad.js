@@ -13,9 +13,7 @@ document.addEventListener('keypress', (e) => spacebarPlayPauseHandler(e));
 
 export const allAudio = [];
 
-export let allPattern = {
-  patterns: [],
-};
+export let allPattern = [];
 let isPlay = false;
 export function changeIsPlay(newIsPlay) {
   isPlay = newIsPlay;
@@ -52,7 +50,9 @@ function addAudioPattern(audioFile) {
   const userAudio = new UserAudioPattern(audioName, audioURL);
   const { audioArr, checkboxContainer, element } = userAudio;
   allAudio.push(audioArr[0]);
-  allPattern.patterns.push(checkboxContainer);
+
+  allPattern.push(checkboxContainer);
+
   patternContainer.appendChild(element);
   modal.classList.add('hidden');
 }
@@ -67,10 +67,10 @@ function triggerAudioSequence(patternlength) {
   const steps = [...Array(patternlength).keys()];
 
   new Tone.Sequence(
-    function (time, step) {
-      allAudio.map((s) => {
-        if (allPattern.patterns[s.id]?.[step].checked) {
-          s.sampler.triggerAttack('C2', time);
+    function (time, column) {
+      allPattern.forEach((audio, index) => {
+        if (audio[column].checked) {
+          allAudio[index].sampler.triggerAttack('C2', time);
         }
       });
     },
