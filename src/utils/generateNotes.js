@@ -1,3 +1,13 @@
-// import { Frequency } from 'tone';
+import { Frequency } from 'tone';
 
-export default function geneateNotes() {}
+export function generateNoteNames(number) {
+  let notes = [];
+  let note = 'C2';
+
+  for (let i = 0; i < number; i++) {
+    notes.push(note);
+    note = Frequency(note).transpose(1).toNote();
+  }
+
+  return notes;
+}

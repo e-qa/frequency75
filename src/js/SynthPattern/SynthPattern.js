@@ -4,11 +4,7 @@ import Pattern from '../AudioPattern/AudioPattern';
 class SynthPattern extends Pattern {
   constructor(patternName) {
     super(patternName);
-    this.synth = new Tone.Synth({
-      oscillator: {
-        type: 'square',
-      },
-    }).toDestination();
+    this.synth = new Tone.AMSynth().toDestination();
   }
 }
 

@@ -35,7 +35,9 @@ class Pattern {
       checkbox.value = this.patternName;
       checkbox.disabled = true;
     }
-    this.#checkboxContainer.push(checkbox);
+    if (index !== 0) {
+      this.#checkboxContainer.push(checkbox);
+    }
     return checkbox;
   }
 

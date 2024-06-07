@@ -68,8 +68,8 @@ function triggerAudioSequence(patternlength) {
 
   new Tone.Sequence(
     function (time, column) {
-      allPattern.forEach((audio, index) => {
-        if (audio[column].checked) {
+      allPattern.forEach((input, index) => {
+        if (input[column].checked) {
           allAudio[index].sampler.triggerAttack('C2', time);
         }
       });
