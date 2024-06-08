@@ -15,6 +15,36 @@
     <title>Frequency75</title>
   </head>
   <body class="bg-bg-primary text-white flex flex-col h-screen justify-between">
+    <header class="bg-red-800 h-10 flex gap-2">
+      <div class="flex">
+        <div class="ml-3 flex items-center gap-5">
+          <button id="add" title="add pattern" aria-label="Add new pattern">
+            <img src="/src/icons/plus.svg" class="w-8 h-6 text-white" alt="plus icon" />
+          </button>
+          <button id="play_pause" title="play or pause" aria-label="play or pause">
+            <img src="/src/icons/play.svg" class="w-8 h-7 text-white" alt="play icon" />
+          </button>
+          <button id="mute" title="mute" aria-label="mute">
+            <img src="/src/icons/mute.svg" class="w-8 h-7 text-white" alt="mute icon" />
+          </button>
+          <div class="flex items-center gap-1">
+            <label for="range">
+              <img src="/src/icons/metronome.svg" class="h-8" alt="metronome" />
+            </label>
+            <input type="range" id="range" class="cursor-pointer appearance-none bg-black rounded-lg" min="60" max="190" value="90" />
+          </div>
+
+          <button id="record" title="record" aria-label="record">
+            <img src="/src/icons/record.svg" class="w-8 h-7 text-white" alt="record icon" />
+          </button>
+          <button id="save" title="save" aria-label="save">
+            <img src="/src/icons/save.svg" class="w-8 h-7 text-white" alt="save icon" />
+          </button>
+          <button id="sytnhStart">start</button>
+          <span id="time" class="border border-black bg-black text-xl">00:00</span>
+        </div>
+      </div>
+    </header>
     <div class="modal hidden w-56 h-56 bottom-[41px] left-1 absolute border bg-red-900 border-red-700">
       <div>
         <label for="add_sample" class="flex text-xl shadow-gray-50 items-center justify-between w-full border cursor-pointer">
@@ -29,17 +59,6 @@
     </div>
     <div class="mt-10 mb-auto" id="patternContainer"></div>
     <div class="mt-10 mb-auto" id="sytnhPattern"></div>
-    <footer class="h-12 mt-1 sticky bottom-0 bg-red-700 flex items-center">
-      <div class="ml-3 flex items-center gap-5">
-        <button id="add" title="add pattern" aria-label="Add new pattern">
-          <img src="/src/icons/plus.svg" class="w-8 h-6 text-white" alt="plus icon" />
-        </button>
-        <button id="play_pause" title="play or pause" aria-label="play or pause">
-          <img src="/src/icons/play.svg" class="w-8 h-7 text-white" alt="play icon" />
-        </button>
-        <button id="sytnhStart">start</button>
-      </div>
-    </footer>
 
     <script type="module" src="/main.js"></script>
   </body>

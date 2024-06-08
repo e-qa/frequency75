@@ -2,12 +2,14 @@ import * as Tone from 'tone';
 import UserAudioPattern from './UserAudioPattern';
 import checkAudioDataLength from '../../utils/checkAudioDataLength';
 import { spacebarPlayPauseHandler } from '../keyboardHandler.js';
+import { formatTime } from '../../utils/formatTime.js';
 
 const modal = document.querySelector('.modal');
 const addPatternBtn = document.getElementById('add');
 const patternContainer = document.getElementById('patternContainer');
 const input = document.getElementById('add_sample');
 const playPauseBtn = document.getElementById('play_pause');
+const timeEl = document.getElementById('time');
 
 document.addEventListener('keypress', (e) => spacebarPlayPauseHandler(e));
 
@@ -33,8 +35,9 @@ playPauseBtn.addEventListener('click', () => {
   }
 
   if (isPlay) {
-    Tone.Transport.cancel();
-    Tone.Transport.stop();
+    // Tone.Transport.cancel();
+    // Tone.Transport.stop();
+    Tone.Transport.pause();
   } else {
     startStop();
   }
@@ -61,6 +64,8 @@ export function startStop() {
   triggerAudioSequence(16);
   Tone.start();
   Tone.Transport.start();
+
+  startTimer();
 }
 
 function triggerAudioSequence(patternlength) {
@@ -81,6 +86,12 @@ function triggerAudioSequence(patternlength) {
 
 function handleAuiodLoad(file) {
   addAudioPattern(file);
+}
+function startTimer() {
+  setInterval(() => {
+    const seconds = Tone.Transport.seconds;
+    timeEl.textContent = formatTime(seconds);
+  }, 1000);
 }
 
 export default handleAuiodLoad;
