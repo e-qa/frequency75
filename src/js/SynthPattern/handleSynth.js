@@ -1,12 +1,10 @@
 import * as Tone from 'tone';
 import SynthPattern from './SynthPattern';
 import { generateNoteNames } from '../../utils/generateNotes';
-import { startStop } from '../AudioPattern/handleAuiodLoad';
 
-const sytnhPatternContainer = document.getElementById('sytnhPattern');
+const synthPatternContainer = document.getElementById('synthPattern');
 const input = document.getElementById('add_synth');
 const modal = document.querySelector('.modal');
-export const play = document.getElementById('sytnhStart');
 export let notes = generateNoteNames(40);
 export let inputs = [];
 export let synths = [];
@@ -17,14 +15,13 @@ Tone.Transport.bpm.value = 100;
 input.addEventListener('click', () => {
   for (var i = 0; i < 40; i++) {
     let createPattern = new SynthPattern(notes[i]);
-    sytnhPatternContainer.append(createPattern.element);
+    synthPatternContainer.append(createPattern.element);
     synths.push(createPattern.synth);
     inputs.push(createPattern.checkboxContainer);
   }
   input.disabled = true;
 });
-
-export function startSynt() {
+export function startSynth() {
   Tone.Transport.scheduleRepeat((time) => {
     inputs.forEach((row, index) => {
       if (row[beat]?.checked) {

@@ -7,5 +7,6 @@
 import * as Tone from 'tone';
 
 import './main.css';
-import handleAuiodLoad from './src/js/AudioPattern/handleAuiodLoad';
-import handleSynth, { beat, inputs, notes, play, synths } from './src/js/SynthPattern/handleSynth';
+
+import handleAudioLoad from './src/js/AudioPattern/handleAudioLoad';
+import handleSynth from './src/js/SynthPattern/handleSynth';

@@ -3,7 +3,7 @@ import UserAudioPattern from './UserAudioPattern';
 import checkAudioDataLength from '../../utils/checkAudioDataLength';
 import { spacebarPlayPauseHandler } from '../keyboardHandler.js';
 import { formatTime } from '../../utils/formatTime.js';
-import { startSynt } from '../SynthPattern/handleSynth.js';
+import { startSynth } from '../SynthPattern/handleSynth.js';
 
 const modal = document.querySelector('.modal');
 const addPatternBtn = document.getElementById('add');
@@ -66,12 +66,13 @@ export function startStop() {
   triggerAudioSequence(16);
   Tone.start();
   Tone.Transport.start();
-  startSynt();
+
+  startSynth();
   startTimer();
 }
 
-function triggerAudioSequence(patternlength) {
-  const steps = [...Array(patternlength).keys()];
+function triggerAudioSequence(patternLength) {
+  const steps = [...Array(patternLength).keys()];
 
   let sequencer = new Tone.Sequence(
     function (time, column) {
@@ -87,7 +88,7 @@ function triggerAudioSequence(patternlength) {
   sequencer.start(0);
 }
 
-function handleAuiodLoad(file) {
+function handleAudioLoad(file) {
   addAudioPattern(file);
 }
 function startTimer() {
@@ -97,4 +98,4 @@ function startTimer() {
   }, 1000);
 }
 
-export default handleAuiodLoad;
+export default handleAudioLoad;
