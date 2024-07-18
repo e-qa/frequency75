@@ -2,7 +2,7 @@ import { Frequency } from 'tone';
 
 export function generateNoteNames(number) {
   let notes = [];
-  let note = 'C2';
+  let note = 'C3';
 
   for (let i = 0; i < number; i++) {
     notes.push(note);

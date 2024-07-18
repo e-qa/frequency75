@@ -1,4 +1,4 @@
-import * as Tone from 'tone';
+import { Transport } from 'tone';
 import checkAudioDataLength from '../utils/checkAudioDataLength';
 import { changeIsPlay, startStop } from './AudioPattern/handleAuiodLoad';
 
@@ -10,8 +10,8 @@ export function spacebarPlayPauseHandler(e) {
     }
 
     if (isPlay) {
-      Tone.Transport.cancel();
-      Tone.Transport.stop();
+      Transport.cancel();
+      Transport.stop();
       changeIsPlay(false);
     } else {
       startStop();
