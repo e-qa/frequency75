@@ -37,9 +37,9 @@ playPauseBtn.addEventListener('click', () => {
   // }
 
   if (isPlay) {
-    // Tone.Transport.cancel();
-    // Tone.Transport.stop();
-    Tone.Transport.pause();
+    Tone.Transport.cancel();
+    Tone.Transport.stop();
+    // Tone.Transport.pause();
   } else {
     startStop();
   }

@@ -6,7 +6,7 @@ class SynthPattern extends Pattern {
     super(patternName);
     this.synth = new Tone.Synth({
       oscillator: {
-        type: 'fatsawtooth',
+        type: 'sine',
         count: 3,
         spread: 30,
       },

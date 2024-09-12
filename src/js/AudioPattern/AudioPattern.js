@@ -1,6 +1,6 @@
 class Pattern {
   static currentId = 0;
-  #patternLength = 26;
+  #patternLength = 16;
   #element;
   #checkboxContainer = [];
   constructor(patternName) {
